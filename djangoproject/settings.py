@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-r8^7a^52yp1d&t2h3qo3p*34w&6*f_1o505tqpl%d=_b=cx6xh'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "rr-biryani-1.onrender.com",
@@ -32,6 +32,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -96,14 +98,15 @@ USE_I18N = True
 USE_TZ = True
 
 # Static Files
-
 STATIC_URL = "/static/"
-
-STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Media Files (Images)
 
