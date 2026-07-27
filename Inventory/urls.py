@@ -13,11 +13,7 @@ urlpatterns = [
 
 
     # Home
-    path(
-        'home/',
-        views.home,
-        name='home'
-    ),
+    path("", views.home, name="index"),
 
 
     # About
