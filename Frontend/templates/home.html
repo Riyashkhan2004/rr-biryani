@@ -1,0 +1,2446 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+RR Briyani | Home
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero">
+
+
+<div class="hero-overlay">
+
+
+<div class="hero-content">
+
+
+<img src="{% static 'images/logo.png' %}"
+class="hero-logo">
+
+
+<h1>
+RR BRIYANI
+</h1>
+
+
+<h3>
+🍛 Taste That Feels Like Home 🍛
+</h3>
+
+
+<p>
+
+Authentic Briyani |
+Grill Chicken |
+Chinese Foods
+
+<br>
+
+Fresh Ingredients & Traditional Taste
+
+</p>
+
+
+
+<div class="hero-buttons">
+
+
+<a href="{% url 'menu' %}">
+🍽 View Menu
+</a>
+
+
+<a href="{% url 'order' %}">
+🎉 Book Event
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- ================= ABOUT SECTION ================= -->
+
+
+<section class="about-section">
+
+
+<div class="container">
+
+
+<div class="row align-items-center g-5">
+
+
+
+<div class="col-lg-6">
+
+
+<img src="{% static 'images/shop.png' %}"
+class="about-img">
+
+
+</div>
+
+
+
+
+
+<div class="col-lg-6">
+
+
+<h1>
+
+🍛 About RR Briyani
+
+</h1>
+
+
+
+<h3>
+
+Taste Of Tradition
+
+</h3>
+
+
+
+<p>
+
+
+Welcome to <b>RR Briyani</b>.
+
+We serve delicious traditional Briyani,
+Grill Chicken, Chinese Foods,
+Starters and Catering Services.
+
+
+</p>
+
+
+<p>
+
+
+Our mission is to provide:
+
+<br>
+
+✔ Quality Food
+
+<br>
+
+✔ Fresh Ingredients
+
+<br>
+
+✔ Clean Cooking
+
+<br>
+
+✔ Fast Service
+
+
+</p>
+
+
+
+
+<p>
+
+
+<b>
+
+தமிழில்:
+
+</b>
+
+
+<br><br>
+
+
+RR பிரியாணி என்பது பாரம்பரிய சுவையுடன்
+தரமான உணவுகளை வழங்கும் குடும்ப உணவகமாகும்.
+
+
+புதிய பொருட்கள்,
+சுத்தமான சமையல்,
+சிறந்த சேவை
+என்பதே எங்கள் நோக்கம்.
+
+
+</p>
+
+
+
+<a href="{% url 'menu' %}"
+class="about-btn">
+
+🍽 Explore Menu
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- ================= SPECIAL TITLE ================= -->
+
+
+<section class="special-title">
+
+
+<h1>
+
+🔥 Today's Special 🔥
+
+</h1>
+
+
+<p>
+
+Our Most Loved Dishes
+
+<br>
+
+எங்களின் பிரபலமான உணவுகள்
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+<style>
+
+
+
+/* HERO */
+
+
+.hero{
+
+
+height:100vh;
+
+
+background:
+linear-gradient(
+rgba(0,0,0,.75),
+rgba(0,0,0,.75)
+),
+url("{% static 'images/shop.png' %}");
+
+background-size:cover;
+
+background-position:center;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+}
+
+
+
+.hero-overlay{
+
+
+text-align:center;
+
+width:100%;
+
+
+}
+
+
+
+.hero-content{
+
+
+color:white;
+
+animation:show 1.5s;
+
+
+}
+
+
+
+.hero-logo{
+
+
+width:160px;
+
+height:160px;
+
+border-radius:50%;
+
+background:white;
+
+padding:8px;
+
+border:5px solid gold;
+
+box-shadow:0 0 30px gold;
+
+
+}
+
+
+
+.hero h1{
+
+
+font-size:75px;
+
+font-weight:900;
+
+letter-spacing:5px;
+
+color:#ffd700;
+
+text-shadow:3px 3px 15px black;
+
+
+}
+
+
+
+.hero h3{
+
+
+font-size:32px;
+
+margin:20px;
+
+
+}
+
+
+
+.hero p{
+
+
+font-size:22px;
+
+line-height:40px;
+
+
+}
+
+
+
+.hero-buttons a{
+
+
+display:inline-block;
+
+margin:15px;
+
+padding:15px 45px;
+
+background:gold;
+
+color:black;
+
+font-weight:bold;
+
+font-size:18px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+transition:.4s;
+
+
+}
+
+
+
+.hero-buttons a:hover{
+
+
+background:white;
+
+transform:translateY(-8px);
+
+
+}
+
+
+
+
+/* ABOUT */
+
+
+.about-section{
+
+
+padding:80px 0;
+
+background:#fff8e7;
+
+
+}
+
+
+
+.about-img{
+
+
+width:100%;
+
+height:450px;
+
+object-fit:cover;
+
+border-radius:30px;
+
+box-shadow:0 10px 30px #999;
+
+
+}
+
+
+
+.about-section h1{
+
+
+color:#b8860b;
+
+font-weight:bold;
+
+
+}
+
+
+
+.about-section p{
+
+
+font-size:18px;
+
+line-height:35px;
+
+color:#555;
+
+
+}
+
+
+
+.about-btn{
+
+
+display:inline-block;
+
+padding:12px 35px;
+
+background:#b8860b;
+
+color:white;
+
+border-radius:30px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+
+}
+
+
+
+
+
+/* SPECIAL TITLE */
+
+
+.special-title{
+
+
+padding:60px 20px;
+
+text-align:center;
+
+
+}
+
+
+
+.special-title h1{
+
+
+font-size:45px;
+
+color:#d00000;
+
+font-weight:bold;
+
+
+}
+
+
+
+.special-title p{
+
+
+font-size:22px;
+
+
+}
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:768px){
+
+
+
+.hero{
+
+height:90vh;
+
+}
+
+
+
+.hero-logo{
+
+
+width:120px;
+
+height:120px;
+
+
+}
+
+
+
+.hero h1{
+
+
+font-size:40px;
+
+
+}
+
+
+
+.hero h3{
+
+
+font-size:22px;
+
+
+}
+
+
+
+.hero p{
+
+
+font-size:16px;
+
+line-height:28px;
+
+
+}
+
+
+
+.hero-buttons a{
+
+
+display:block;
+
+margin:15px auto;
+
+width:80%;
+
+
+}
+
+
+
+.about-img{
+
+
+height:300px;
+
+
+}
+
+
+
+.special-title h1{
+
+
+font-size:32px;
+
+
+}
+
+
+}
+
+
+@keyframes show{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+</style>
+<!-- ================= TODAY SPECIAL FOOD ================= -->
+
+
+<section class="container special-food">
+
+
+<div class="row g-4">
+
+
+
+<!-- Chicken Briyani -->
+
+
+<div class="col-lg-3 col-md-6">
+
+
+<div class="food-card">
+
+
+<img src="{% static 'images/biryani.jpg' %}">
+
+
+<div class="food-body">
+
+
+<h3>
+🍗 Chicken Briyani
+</h3>
+
+
+<p>
+Traditional Chicken Briyani
+</p>
+
+
+<h2>
+
+</h2>
+
+
+<a href="{% url 'menu' %}">
+Order Now
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- Mutton Briyani -->
+
+
+<div class="col-lg-3 col-md-6">
+
+
+<div class="food-card">
+
+
+<img src="{% static 'images/chappathi.jpg' %}">
+
+
+<div class="food-body">
+
+
+<h3>
+🥩 chappathi
+</h3>
+
+
+<p>
+Premium  Taste
+</p>
+
+
+<h2>
+
+</h2>
+
+
+<a href="{% url 'menu' %}">
+Order Now
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- Grill Chicken -->
+
+
+<div class="col-lg-3 col-md-6">
+
+
+<div class="food-card">
+
+
+<img src="{% static 'images/parotta.jpg' %}">
+
+
+<div class="food-body">
+
+
+<h3>
+parotta
+</h3>
+
+
+<p>
+Juicy & Spicy 
+</p>
+
+
+<h2>
+
+</h2>
+
+
+<a href="{% url 'menu' %}">
+Order Now
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Noodles -->
+
+
+<div class="col-lg-3 col-md-6">
+
+
+<div class="food-card">
+
+
+<img src="{% static 'images/rice.jpg' %}">
+
+
+<div class="food-body">
+
+
+<h3>
+🍜 Chicken rice
+</h3>
+
+
+<p>
+Chinese Special
+</p>
+
+
+<h2>
+
+</h2>
+
+
+<a href="{% url 'menu' %}">
+Order Now
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="text-center mt-5">
+
+
+<a href="{% url 'menu' %}"
+class="all-menu-btn">
+
+🍽 View Full Menu
+
+</a>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= EVENT CATERING ================= -->
+
+
+
+<section class="event-section">
+
+
+
+<div class="container">
+
+
+<div class="row align-items-center g-5">
+
+
+
+
+
+<div class="col-lg-6">
+
+
+<img src="{% static 'images/logo.png' %}"
+class="event-img">
+
+
+</div>
+
+
+
+
+
+
+
+<div class="col-lg-6 text-white">
+
+
+
+<h1>
+
+🎉 Event Catering
+
+</h1>
+
+
+
+<p>
+
+
+We provide catering service for:
+
+
+<br><br>
+
+
+✅ Wedding Functions
+
+<br>
+
+✅ Birthday Parties
+
+<br>
+
+✅ Family Events
+
+<br>
+
+✅ Corporate Meetings
+
+<br>
+
+✅ College Functions
+
+<br>
+
+✅ Festival Events
+
+
+
+</p>
+
+
+
+
+<p>
+
+
+தமிழில்:
+
+
+<br><br>
+
+
+திருமணம்,
+பிறந்தநாள்,
+குடும்ப விழா,
+நிறுவன நிகழ்ச்சி
+மற்றும் அனைத்து நிகழ்ச்சிகளுக்கும்
+சிறந்த உணவு ஏற்பாடு செய்து தருகிறோம்.
+
+
+</p>
+
+
+
+
+
+<a href="{% url 'order' %}"
+class="event-btn">
+
+
+📦 Book Your Event
+
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<style>
+
+
+
+/* FOOD CARD */
+
+
+.special-food{
+
+
+padding:40px 0 80px;
+
+
+}
+
+
+
+.food-card{
+
+
+background:white;
+
+border-radius:25px;
+
+overflow:hidden;
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+transition:.4s;
+
+
+}
+
+
+
+.food-card:hover{
+
+
+transform:translateY(-12px);
+
+
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+
+
+}
+
+
+
+
+.food-card img{
+
+
+width:100%;
+
+height:230px;
+
+object-fit:cover;
+
+
+}
+
+
+
+
+.food-body{
+
+
+padding:25px;
+
+text-align:center;
+
+
+}
+
+
+
+
+.food-body h3{
+
+
+font-weight:bold;
+
+color:#333;
+
+
+}
+
+
+
+
+.food-body p{
+
+
+color:#777;
+
+
+}
+
+
+
+
+.food-body h2{
+
+
+color:#d00000;
+
+font-weight:bold;
+
+
+}
+
+
+
+
+.food-body a{
+
+
+display:block;
+
+background:#ffc107;
+
+padding:12px;
+
+border-radius:30px;
+
+color:black;
+
+font-weight:bold;
+
+text-decoration:none;
+
+
+}
+
+
+
+
+.food-body a:hover{
+
+
+background:#111;
+
+color:white;
+
+
+}
+
+
+
+
+.all-menu-btn{
+
+
+background:#d00000;
+
+color:white;
+
+padding:15px 45px;
+
+border-radius:40px;
+
+font-size:18px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+
+}
+
+
+
+
+
+
+/* EVENT */
+
+
+.event-section{
+
+
+padding:80px 0;
+
+background:
+
+linear-gradient(
+135deg,
+#700000,
+#d00000
+);
+
+
+}
+
+
+
+.event-img{
+
+
+width:100%;
+
+max-width:400px;
+
+border-radius:30px;
+
+box-shadow:0 0 30px black;
+
+
+}
+
+
+
+.event-section h1{
+
+
+font-size:45px;
+
+color:#ffd700;
+
+
+}
+
+
+
+
+.event-section p{
+
+
+font-size:19px;
+
+line-height:35px;
+
+
+}
+
+
+
+
+.event-btn{
+
+
+display:inline-block;
+
+background:#ffd700;
+
+color:black;
+
+padding:15px 40px;
+
+border-radius:40px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:768px){
+
+
+
+.food-card{
+
+
+margin-bottom:20px;
+
+
+}
+
+
+
+.event-section{
+
+
+text-align:center;
+
+
+}
+
+
+
+.event-section h1{
+
+
+font-size:35px;
+
+
+}
+
+
+
+.event-section p{
+
+
+font-size:16px;
+
+
+}
+
+
+}
+/* ================= MOBILE RESPONSIVE ================= */
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+.container{
+    width:100%;
+    padding-left:15px;
+    padding-right:15px;
+}
+
+.hero{
+    min-height:100vh;
+    height:auto;
+    padding:80px 15px;
+}
+
+.hero-content{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+}
+
+.hero-logo{
+    width:120px;
+    height:120px;
+}
+
+.hero h1{
+    font-size:clamp(32px,8vw,75px);
+    letter-spacing:2px;
+}
+
+.hero h3{
+    font-size:clamp(18px,5vw,30px);
+}
+
+.hero p{
+    font-size:clamp(15px,4vw,22px);
+    line-height:1.8;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.hero-buttons a{
+    min-width:180px;
+}
+
+.about-section,
+.event-section,
+.review-section,
+.contact-section,
+.why-section,
+.special-food{
+    padding:60px 15px;
+}
+
+.about-img,
+.event-img{
+    width:100%;
+    height:auto;
+}
+
+.food-card img{
+    height:220px;
+    object-fit:cover;
+}
+
+.map-box iframe{
+    width:100%;
+}
+
+.footer .row>div{
+    margin-bottom:30px;
+}
+
+.scroll-btn{
+    width:50px;
+    height:50px;
+    right:15px;
+    bottom:15px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+.hero{
+    padding:60px 20px;
+}
+
+.hero-logo{
+    width:90px;
+    height:90px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+    align-items:center;
+}
+
+.hero-buttons a{
+    width:100%;
+    max-width:280px;
+    margin:8px 0;
+}
+
+.about-section,
+.event-section,
+.review-section,
+.contact-section,
+.why-section,
+.special-food{
+    text-align:center;
+}
+
+.about-img{
+    margin-bottom:25px;
+}
+
+.event-img{
+    width:220px;
+    display:block;
+    margin:auto;
+}
+
+.food-card img{
+    height:180px;
+}
+
+.special-title h1,
+.why-section h1,
+.review-section h1,
+.contact-section h1{
+    font-size:30px;
+}
+
+.counter-section .col-md-3{
+    margin-bottom:25px;
+}
+
+.footer{
+    text-align:center;
+}
+
+.map-box{
+    margin-top:20px;
+}
+
+iframe{
+    height:250px;
+}
+
+}
+
+/* ================= TABLET ================= */
+
+@media (min-width:769px) and (max-width:1024px){
+
+.hero h1{
+    font-size:55px;
+}
+
+.hero-logo{
+    width:130px;
+    height:130px;
+}
+
+.food-card img{
+    height:200px;
+}
+
+}
+
+
+</style>
+<!-- ================= WHY CHOOSE US ================= -->
+
+
+<section class="why-section">
+
+
+<div class="container">
+
+
+<h1>
+Why Choose RR Briyani?
+</h1>
+
+
+<p class="why-tamil">
+ஏன் RR பிரியாணியை தேர்வு செய்ய வேண்டும்?
+</p>
+
+
+
+<div class="row g-4 mt-4">
+
+
+
+<div class="col-lg-3 col-md-6">
+
+
+<div class="why-card">
+
+<h2>
+🍛
+</h2>
+
+<h4>
+Authentic Taste
+</h4>
+
+<p>
+Traditional Briyani Taste
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="col-lg-3 col-md-6">
+
+
+<div class="why-card">
+
+<h2>
+🥗
+</h2>
+
+<h4>
+Fresh Food
+</h4>
+
+<p>
+Fresh Ingredients Everyday
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="col-lg-3 col-md-6">
+
+
+<div class="why-card">
+
+<h2>
+🚚
+</h2>
+
+<h4>
+Fast Service
+</h4>
+
+<p>
+Quick & Quality Service
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="col-lg-3 col-md-6">
+
+
+<div class="why-card">
+
+<h2>
+❤️
+</h2>
+
+<h4>
+Happy Customers
+</h4>
+
+<p>
+Customer Satisfaction
+</p>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= COUNTER ================= -->
+
+
+<section class="counter-section">
+
+
+<div class="container">
+
+
+<div class="row text-center">
+
+
+
+<div class="col-md-3">
+
+<h1>
+10K+
+</h1>
+
+<p>
+Happy Customers
+</p>
+
+</div>
+
+
+
+
+
+<div class="col-md-3">
+
+<h1>
+50+
+</h1>
+
+<p>
+Food Items
+</p>
+
+</div>
+
+
+
+
+
+<div class="col-md-3">
+
+<h1>
+500+
+</h1>
+
+<p>
+Events Completed
+</p>
+
+</div>
+
+
+
+
+
+<div class="col-md-3">
+
+<h1>
+5⭐
+</h1>
+
+<p>
+Customer Rating
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= REVIEWS ================= -->
+
+
+<section class="review-section">
+
+
+<div class="container">
+
+
+<h1>
+⭐ Customer Reviews ⭐
+</h1>
+
+
+
+<div class="row g-4 mt-4">
+
+
+
+<div class="col-md-4">
+
+
+<div class="review-card">
+
+
+<h2>
+⭐⭐⭐⭐⭐
+</h2>
+
+
+<p>
+
+"Best Briyani Taste.
+Excellent Service."
+
+</p>
+
+
+<h5>
+- Praveen
+</h5>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+
+
+<div class="review-card">
+
+
+<h2>
+⭐⭐⭐⭐⭐
+</h2>
+
+
+<p>
+
+"Clean Restaurant.
+Loved Grill Chicken."
+
+</p>
+
+
+<h5>
+- Karthik
+</h5>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+
+
+<div class="review-card">
+
+
+<h2>
+⭐⭐⭐⭐⭐
+</h2>
+
+
+<p>
+
+"Family Friendly Restaurant.
+Affordable Price."
+
+</p>
+
+
+<h5>
+- Surya
+</h5>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= CONTACT ================= -->
+
+
+<section class="contact-section">
+
+
+<div class="container">
+
+
+<div class="row g-5">
+
+
+
+<div class="col-lg-6">
+
+
+<h1>
+📍 Visit RR Briyani
+</h1>
+
+
+<hr>
+
+
+<h4>
+🏠 Address
+</h4>
+
+
+<p>
+
+Allapakkam Main Road,
+
+<br>
+
+Kullanchavadi,
+
+<br>
+
+Cuddalore District,
+
+<br>
+
+Tamil Nadu
+
+</p>
+
+
+
+
+<h4>
+📞 Phone
+</h4>
+
+
+<p>
++91 9500392845
+</p>
+
+
+
+<h4>
+⏰ Opening Time
+</h4>
+
+
+<p>
+10:00 AM - 11:00 PM
+</p>
+
+
+
+
+<h4>
+📧 Email
+</h4>
+
+
+<p>
+rrbriyani@gmail.com
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="col-lg-6">
+
+
+<div class="map-box">
+
+
+<h3>
+📍 Our Location
+</h3>
+
+
+<iframe
+
+src="https://maps.google.com/maps?q=Kullanchavadi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+
+width="100%"
+
+height="350"
+
+style="border:0;border-radius:20px;">
+
+</iframe>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+
+
+<footer class="footer">
+
+
+<div class="container">
+
+
+<div class="row">
+
+
+
+<div class="col-md-4">
+
+
+<h2>
+🍛 RR Briyani
+</h2>
+
+
+<p>
+
+Taste Of Tradition
+
+<br><br>
+
+Briyani,
+
+Grill Chicken,
+
+Chinese Foods
+
+& Catering Service
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+
+
+<h2>
+Quick Links
+</h2>
+
+
+<p>
+
+🏠 Home
+
+<br>
+
+🍽 Menu
+
+<br>
+
+🎉 Event
+
+<br>
+
+📞 Contact
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+
+
+<h2>
+Contact
+</h2>
+
+
+<p>
+
+📍 Kullanchavadi
+
+<br>
+
+📞 9500392845
+
+<br>
+
+📧 rrbriyani@gmail.com
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<hr>
+
+
+<div class="text-center">
+
+
+© 2026 RR Briyani
+
+<br>
+
+Designed ❤️ For Food Lovers
+
+
+</div>
+
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+
+
+
+<!-- SCROLL BUTTON -->
+
+
+<a href="#"
+class="scroll-btn">
+
+⬆
+
+</a>
+
+
+
+
+
+
+
+
+
+<style>
+
+
+
+.why-section{
+
+
+padding:80px 0;
+
+text-align:center;
+
+
+}
+
+
+
+.why-section h1,
+.review-section h1{
+
+
+color:#d00000;
+
+font-weight:bold;
+
+
+}
+
+
+
+.why-tamil{
+
+
+font-size:20px;
+
+
+}
+
+
+
+.why-card{
+
+
+background:white;
+
+padding:30px;
+
+border-radius:25px;
+
+box-shadow:0 10px 25px #ddd;
+
+height:100%;
+
+transition:.4s;
+
+
+}
+
+
+
+.why-card:hover{
+
+
+transform:translateY(-10px);
+
+
+}
+
+
+
+
+.counter-section{
+
+
+background:#111;
+
+color:white;
+
+padding:60px 0;
+
+
+}
+
+
+
+.counter-section h1{
+
+
+color:gold;
+
+font-size:50px;
+
+
+}
+
+
+
+
+.review-section{
+
+
+padding:80px 0;
+
+text-align:center;
+
+
+}
+
+
+
+.review-card{
+
+
+padding:30px;
+
+background:white;
+
+border-radius:25px;
+
+box-shadow:0 10px 25px #ddd;
+
+
+}
+
+
+
+
+.contact-section{
+
+
+background:#fff8e7;
+
+padding:80px 0;
+
+
+}
+
+
+
+.contact-section h1{
+
+
+color:#b8860b;
+
+
+}
+
+
+
+
+.map-box{
+
+
+background:white;
+
+padding:20px;
+
+border-radius:25px;
+
+box-shadow:0 10px 30px #ccc;
+
+
+}
+
+
+
+
+
+
+.footer{
+
+
+background:#111;
+
+color:white;
+
+padding:60px 0;
+
+
+}
+
+
+
+.footer h2{
+
+
+color:gold;
+
+
+}
+
+
+
+
+.scroll-btn{
+
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+background:rgb(0, 0, 0);
+
+color:black;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:25px;
+
+text-decoration:none;
+
+
+}
+
+
+
+
+
+
+@media(max-width:768px){
+
+
+
+.counter-section h1{
+
+
+font-size:35px;
+
+
+}
+
+
+
+.contact-section{
+
+
+text-align:center;
+
+
+}
+
+
+
+.footer{
+
+
+text-align:center;
+
+
+}
+
+
+}
+
+
+
+
+</style>
+
+
+{% endblock %}

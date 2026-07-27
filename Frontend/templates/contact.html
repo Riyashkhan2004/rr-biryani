@@ -1,0 +1,380 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+RR Briyani | Contact
+{% endblock %}
+
+
+{% block content %}
+
+
+<style>
+
+.contact-section{
+
+    padding:60px 20px;
+    background:#fff8e7;
+
+}
+
+
+.contact-title{
+
+    text-align:center;
+    font-size:42px;
+    font-weight:bold;
+    color:#b8860b;
+    margin-bottom:40px;
+
+}
+
+
+
+.contact-card{
+
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    height:100%;
+
+}
+
+
+
+.contact-card h3{
+
+    color:#b8860b;
+    font-weight:bold;
+    margin-bottom:20px;
+
+}
+
+
+
+.contact-card p{
+
+    font-size:18px;
+    line-height:2;
+    color:#555;
+
+}
+
+
+
+.contact-icon{
+
+    font-size:35px;
+    margin-right:10px;
+
+}
+
+
+
+.map-box iframe{
+
+    width:100%;
+    height:350px;
+    border:0;
+    border-radius:20px;
+
+}
+
+
+
+.contact-btn{
+
+    background:#b8860b;
+    color:white;
+    padding:12px 35px;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:bold;
+    text-decoration:none;
+
+}
+
+
+.contact-btn:hover{
+
+    background:#8b6508;
+    color:white;
+
+}
+
+
+
+
+/* Mobile Responsive */
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+.contact-section{
+    padding:25px 15px;
+}
+
+.contact-title{
+    font-size:28px;
+    line-height:1.3;
+    margin-bottom:25px;
+}
+
+.contact-card{
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+}
+
+.contact-card h3{
+    font-size:22px;
+    text-align:center;
+}
+
+.contact-card p{
+    font-size:15px;
+    line-height:1.8;
+    word-break:break-word;
+}
+
+.contact-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:12px;
+    font-size:16px;
+    margin-top:15px;
+}
+
+.map-box iframe{
+    width:100%;
+    height:250px;
+    border-radius:15px;
+}
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width:480px){
+
+.contact-section{
+    padding:20px 10px;
+}
+
+.contact-title{
+    font-size:24px;
+}
+
+.contact-card{
+    padding:15px;
+}
+
+.contact-card h3{
+    font-size:20px;
+}
+
+.contact-card p{
+    font-size:14px;
+}
+
+.contact-btn{
+    font-size:15px;
+    padding:10px;
+}
+
+.map-box iframe{
+    height:220px;
+}
+
+}
+
+
+</style>
+
+
+
+<section class="contact-section">
+
+
+<div class="container">
+
+
+<h1 class="contact-title">
+
+📞 Contact RR Briyani
+
+</h1>
+
+
+
+<div class="row g-4">
+
+
+<!-- Contact Details -->
+
+
+<div class="col-lg-6">
+
+
+<div class="contact-card">
+
+
+<h3>
+
+🍛 RR Briyani Restaurant
+
+</h3>
+
+
+
+<p>
+
+📍 <b>Address</b>
+
+<br>
+
+RR Briyani,
+
+<br>
+
+Allapakkam Main Road,
+
+<br>
+
+Kullanchavadi,
+
+<br>
+
+Cuddalore District,
+
+<br>
+
+Tamil Nadu.
+
+
+</p>
+
+
+
+
+<p>
+
+📞 <b>Phone</b>
+
+<br>
+
++91 9500392845
+
+
+</p>
+
+
+
+
+<p>
+
+📧 <b>Email</b>
+
+<br>
+
+rrbriyani@gmail.com
+
+
+</p>
+
+
+
+
+<p>
+
+🕙 <b>Opening Time</b>
+
+<br>
+
+Everyday
+
+<br>
+
+10:00 AM - 11:00 PM
+
+
+</p>
+
+
+
+<a href="{% url 'menu' %}"
+class="contact-btn">
+
+🍽 View Menu
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- Map -->
+
+
+<div class="col-lg-6">
+
+
+<div class="contact-card map-box">
+
+
+<h3>
+
+📍 Our Location
+
+</h3>
+
+
+
+<p>
+
+Visit our restaurant and enjoy authentic taste.
+
+</p>
+
+
+
+
+<iframe
+
+src="https://maps.google.com/maps?q=Kullanchavadi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+
+loading="lazy">
+
+</iframe>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+{% endblock %}

@@ -1,0 +1,634 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<style>
+
+
+*{
+    box-sizing:border-box;
+}
+
+
+.about-page{
+
+    background:#fff8e7;
+    padding:50px 20px;
+
+}
+
+
+
+/* Hero Section */
+
+
+.about-container{
+
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    gap:50px;
+
+}
+
+
+
+.about-image{
+
+    flex:1;
+
+}
+
+
+
+.about-image img{
+
+    width:100%;
+    height:450px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+
+
+
+.about-content{
+
+    flex:1;
+
+}
+
+
+
+.about-content h1{
+
+    color:#b8860b;
+
+    font-size:45px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.about-content h2{
+
+    color:#222;
+
+    font-size:30px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.about-content p{
+
+    color:#555;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+/* Tamil English Box */
+
+
+.language-box{
+
+    background:white;
+
+    padding:25px;
+
+    margin-top:25px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+
+
+.language-box h3{
+
+    color:#b8860b;
+
+    margin-bottom:10px;
+
+}
+
+
+
+
+/* Cards */
+
+
+.cards{
+
+
+max-width:1200px;
+
+margin:50px auto 0;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+
+}
+
+
+
+
+.card{
+
+background:white;
+
+padding:30px;
+
+text-align:center;
+
+border-radius:20px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.12);
+
+}
+
+
+
+.card h2{
+
+font-size:35px;
+
+color:#d4a017;
+
+}
+
+
+
+.card h3{
+
+font-size:22px;
+
+}
+
+
+
+.card p{
+
+color:#666;
+
+}
+
+
+
+
+/* Story */
+
+
+.story{
+
+
+max-width:1200px;
+
+margin:50px auto 0;
+
+background:white;
+
+padding:35px;
+
+border-radius:25px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+
+}
+
+
+
+.story h2{
+
+
+color:#b8860b;
+
+font-size:32px;
+
+margin-bottom:15px;
+
+
+}
+
+
+.story p{
+
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#555;
+
+
+}
+
+
+
+
+/* Mobile *//* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+.about-page{
+    padding:25px 15px;
+}
+
+.about-container{
+    flex-direction:column;
+    text-align:center;
+    gap:25px;
+}
+
+.about-image{
+    width:100%;
+}
+
+.about-image img{
+    width:100%;
+    height:250px;
+    border-radius:15px;
+}
+
+.about-content{
+    width:100%;
+}
+
+.about-content h1{
+    font-size:30px;
+}
+
+.about-content h2{
+    font-size:22px;
+}
+
+.about-content p{
+    font-size:15px;
+    line-height:1.7;
+    text-align:justify;
+}
+
+.language-box{
+    padding:18px;
+    border-radius:15px;
+}
+
+.language-box h3{
+    font-size:20px;
+}
+
+.language-box p{
+    font-size:15px;
+    text-align:justify;
+}
+
+.cards{
+    grid-template-columns:1fr;
+    gap:15px;
+    margin-top:30px;
+}
+
+.card{
+    padding:20px;
+}
+
+.card h2{
+    font-size:28px;
+}
+
+.card h3{
+    font-size:20px;
+}
+
+.card p{
+    font-size:15px;
+}
+
+.story{
+    padding:20px;
+    margin-top:30px;
+    border-radius:15px;
+}
+
+.story h2{
+    font-size:24px;
+    text-align:center;
+}
+
+.story p{
+    font-size:15px;
+    line-height:1.7;
+    text-align:justify;
+}
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width:480px){
+
+.about-page{
+    padding:20px 10px;
+}
+
+.about-image img{
+    height:200px;
+}
+
+.about-content h1{
+    font-size:26px;
+}
+
+.about-content h2{
+    font-size:20px;
+}
+
+.about-content p,
+.language-box p,
+.story p{
+    font-size:14px;
+}
+
+.card h2{
+    font-size:24px;
+}
+
+.card h3{
+    font-size:18px;
+}
+
+.story h2{
+    font-size:22px;
+}
+
+}
+
+
+</style>
+
+
+
+
+
+<div class="about-page">
+
+
+
+<!-- Main About -->
+
+
+<div class="about-container">
+
+
+
+<div class="about-image">
+
+
+<img src="{% static 'images/biryani.jpg' %}"
+alt="RR Briyani">
+
+
+</div>
+
+
+
+
+
+<div class="about-content">
+
+
+<h1>
+🍛 RR Briyani
+</h1>
+
+
+<h2>
+Taste Of Tradition
+</h2>
+
+
+
+<p>
+
+Welcome to RR Briyani.
+We bring you authentic South Indian
+briyani prepared with traditional recipes,
+fresh ingredients and rich flavours.
+
+</p>
+
+
+
+<p>
+
+Every dish is made with passion to give
+our customers a delicious and memorable
+food experience.
+
+</p>
+
+
+
+
+
+<div class="language-box">
+
+
+<h3>
+தமிழில்:
+</h3>
+
+
+<p>
+
+RR பிரியாணிக்கு உங்களை அன்புடன் வரவேற்கிறோம்.
+
+எங்கள் உணவகத்தில் பாரம்பரிய சுவையுடன்
+தயாரிக்கப்படும் சுவையான பிரியாணி,
+தரமான அரிசி மற்றும் புதிய பொருட்களுடன்
+வழங்கப்படுகிறது.
+
+வாடிக்கையாளர்களின் திருப்தியே எங்களின்
+முக்கிய நோக்கம்.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- Achievement Cards -->
+
+
+<div class="cards">
+
+
+
+<div class="card">
+
+<h2>
+10+
+</h2>
+
+<h3>
+Years Experience
+</h3>
+
+<p>
+ஆண்டுகள் அனுபவம்
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>
+5000+
+</h2>
+
+<h3>
+Happy Customers
+</h3>
+
+<p>
+மகிழ்ச்சியான வாடிக்கையாளர்கள்
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>
+100%
+</h2>
+
+<h3>
+Quality Food
+</h3>
+
+<p>
+தரமான உணவு
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Story Section -->
+
+
+<div class="story">
+
+
+<h2>
+Our Story | எங்கள் கதை
+</h2>
+
+
+
+<p>
+
+RR Briyani started with a simple dream:
+to serve tasty and traditional briyani
+to every food lover.
+
+</p>
+
+
+
+<p>
+
+எங்கள் பயணம் சிறிய கனவுடன் தொடங்கியது.
+பாரம்பரிய முறையில் தயாரிக்கப்படும்
+சுவையான பிரியாணியை அனைவருக்கும்
+வழங்குவதே எங்கள் இலக்கு.
+
+</p>
+
+
+
+<p>
+
+We focus on quality, hygiene,
+customer satisfaction and authentic taste.
+
+</p>
+
+
+
+<p>
+
+தரம், சுத்தம், சிறந்த சேவை மற்றும்
+உண்மையான சுவை ஆகியவை எங்கள்
+முக்கிய அடையாளங்கள்.
+
+</p>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+{% endblock %}

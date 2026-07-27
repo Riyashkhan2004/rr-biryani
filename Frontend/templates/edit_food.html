@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow p-4">
+
+        <h2 class="mb-4">
+            ✏️ Edit Food
+        </h2>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <label>Food Name</label>
+
+            <input
+                type="text"
+                name="name"
+                class="form-control mb-3"
+                value="{{ food.name }}"
+                required>
+
+            <label>Category</label>
+
+            <select
+                name="category"
+                class="form-control mb-3">
+
+                <option value="Normal"
+                {% if food.category == "Normal" %}selected{% endif %}>
+                Normal
+                </option>
+
+                <option value="Event"
+                {% if food.category == "Event" %}selected{% endif %}>
+                Event
+                </option>
+
+            </select>
+
+            <label>Price</label>
+
+            <input
+                type="number"
+                name="price"
+                class="form-control mb-3"
+                value="{{ food.price }}"
+                required>
+
+            <label>Description</label>
+
+            <textarea
+                name="description"
+                class="form-control mb-3"
+                rows="4">{{ food.description }}</textarea>
+
+            <label>Current Image</label><br>
+
+            <img
+                src="{{ food.image.url }}"
+                width="200"
+                class="mb-3 rounded">
+
+            <br>
+
+            <label>New Image</label>
+
+            <input
+                type="file"
+                name="image"
+                class="form-control mb-4">
+
+            <button class="btn btn-success">
+                💾 Update Food
+            </button>
+
+            <a href="{% url 'admin_order' %}"
+               class="btn btn-secondary">
+               Cancel
+            </a>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

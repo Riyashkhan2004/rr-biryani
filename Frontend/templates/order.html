@@ -1,0 +1,362 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-10">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="row g-0">
+
+                    <!-- Food Image -->
+                    <div class="col-md-5">
+
+                        <img src="{{ food.image.url }}"
+                             class="img-fluid rounded-start h-100"
+                             style="object-fit:cover;">
+
+                    </div>
+
+                    <!-- Order Form -->
+                    <div class="col-md-7">
+
+                        <div class="card-body p-4">
+
+                            <h2 class="text-center text-danger fw-bold">
+                                🍽️ RR Restaurant
+                            </h2>
+
+                            <p class="text-center text-muted">
+                                Complete Your Order
+                            </p>
+
+                            <hr>
+
+                            <h3 class="fw-bold">
+                                {{ food.name }}
+                            </h3>
+
+                            <span class="badge bg-success">
+                                {{ food.category }}
+                            </span>
+
+                            <h4 class="text-primary mt-3">
+                                Price :
+                                ₹<span id="price">{{ food.price }}</span>
+                            </h4>
+
+                            <form method="POST">
+
+                                {% csrf_token %}
+
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Customer Name
+                                    </label>
+
+                                    <input type="text"
+                                           class="form-control"
+                                           name="customer_name"
+                                           placeholder="Enter Name"
+                                           required>
+
+                                </div>
+
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Mobile Number
+                                    </label>
+
+                                    <input type="tel"
+                                           class="form-control"
+                                           name="mobile"
+                                           maxlength="10"
+                                           placeholder="9876543210"
+                                           required>
+
+                                </div>
+
+                                <div class="mb-3">
+
+                                    <label class="form-label">
+                                        Delivery Address
+                                    </label>
+
+                                    <textarea
+                                        class="form-control"
+                                        rows="3"
+                                        name="address"
+                                        placeholder="Enter Delivery Address"
+                                        required></textarea>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Quantity
+                                        </label>
+
+                                        <input type="number"
+                                               id="qty"
+                                               class="form-control"
+                                               value="1"
+                                               min="1"
+                                               name="qty"
+                                               oninput="calculateTotal()">
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label">
+                                            Total Amount
+                                        </label>
+
+                                        <input type="text"
+                                               id="total"
+                                               class="form-control fw-bold text-success"
+                                               value="{{ food.price }}"
+                                               readonly>
+
+                                    </div>
+
+                                </div>
+
+                                <hr>
+
+                                <div class="mt-4">
+
+                                    <label class="form-label">
+                                        Current Location
+                                    </label>
+
+                                    <textarea
+                                        id="location"
+                                        class="form-control"
+                                        rows="2"
+                                        readonly
+                                        name="location"
+                                        placeholder="Click 'Get Current Location'">
+                                    </textarea>
+
+                                </div>
+
+                                <button type="button"
+                                        class="btn btn-secondary w-100 mt-3"
+                                        onclick="getLocation()">
+
+                                    📍 Get Current Location
+
+                                </button>
+
+                                <button type="button"
+                                        class="btn btn-success btn-lg w-100 mt-3"
+                                        onclick="placeOrder()">
+
+                                    📲 Order on WhatsApp
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+
+function calculateTotal(){
+
+    let price = parseFloat(document.getElementById("price").innerHTML);
+
+    let qty = parseInt(document.getElementById("qty").value);
+
+    if(isNaN(qty) || qty < 1){
+        qty = 1;
+        document.getElementById("qty").value = 1;
+    }
+
+    let total = price * qty;
+
+    document.getElementById("total").value = total.toFixed(2);
+
+}
+
+function getLocation(){
+
+    if(navigator.geolocation){
+
+        navigator.geolocation.getCurrentPosition(
+
+            function(position){
+
+                document.getElementById("location").value =
+                "Latitude : " + position.coords.latitude +
+                "\nLongitude : " + position.coords.longitude;
+
+            },
+
+            function(){
+
+                alert("Location Permission Denied");
+
+            }
+
+        );
+
+    }else{
+
+        alert("Geolocation is not supported.");
+
+    }
+
+}
+
+window.onload = function(){
+
+    calculateTotal();
+
+};
+
+function placeOrder(){
+
+    let name = document.querySelector("[name='customer_name']").value;
+    let mobile = document.querySelector("[name='mobile']").value;
+    let address = document.querySelector("[name='address']").value;
+    let qty = document.getElementById("qty").value;
+    let total = document.getElementById("total").value;
+    let location = document.getElementById("location").value;
+
+    let food = "{{ food.name }}";
+
+    let message =
+`🍽️ *RR Restaurant Order*
+
+👤 Customer : ${name}
+
+📞 Mobile : ${mobile}
+
+🍛 Food : ${food}
+
+🔢 Quantity : ${qty}
+
+💰 Total : ₹${total}
+
+📍 Address :
+${address}
+
+📌 Current Location :
+${location}
+
+Please confirm my order.`;
+
+    let whatsapp =
+    "https://wa.me/919500392845?text=" +
+    encodeURIComponent(message);
+
+    window.open(whatsapp, "_blank");
+
+}
+
+</script>
+
+<style>
+
+body{
+    background:#f4f6f9;
+}
+
+.card{
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.card img:hover{
+    transform:scale(1.04);
+}
+
+.form-control,
+.form-select{
+    border-radius:12px;
+}
+
+.btn{
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.03);
+}
+
+#total{
+    font-size:20px;
+    color:green;
+}
+
+.badge{
+    font-size:15px;
+}
+
+@media (max-width:768px){
+
+.container{
+    padding:15px !important;
+}
+
+.card-body{
+    padding:20px !important;
+}
+
+.card img{
+    height:250px !important;
+}
+
+.btn{
+    width:100%;
+}
+
+}
+
+@media (max-width:576px){
+
+.card-body{
+    padding:15px !important;
+}
+
+.card img{
+    height:220px !important;
+}
+
+}
+
+</style>
+
+{% endblock %}
