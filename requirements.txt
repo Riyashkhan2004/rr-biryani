@@ -9,3 +9,4 @@ whitenoise==6.9.0
 cloudinary
 django-cloudinary-storage
 psycopg2-binary
+dj-database-url==2.3.0
