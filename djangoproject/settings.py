@@ -10,7 +10,11 @@ SECRET_KEY = 'django-insecure-r8^7a^52yp1d&t2h3qo3p*34w&6*f_1o505tqpl%d=_b=cx6xh
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "rr-biryani-1.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 # Application definition
 
