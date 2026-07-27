@@ -36,16 +36,19 @@
 
 
 {% if food.image %}
-
-<img src="{{food.image.url}}"
-class="food-image">
-
+    <img src="{{ food.image.url }}" class="food-image">
 {% else %}
-
-<img src="{% static 'images/no-food.png' %}"
-class="food-image">
-
+    {% if 'briyani' in food.name|lower or 'biryani' in food.name|lower %}
+        <img src="{% static 'images/biryani.jpg' %}" class="food-image">
+    {% elif 'parotta' in food.name|lower %}
+        <img src="{% static 'images/parotta.jpg' %}" class="food-image">
+    {% elif 'chappathi' in food.name|lower or 'chapathi' in food.name|lower %}
+        <img src="{% static 'images/chappathi.jpg' %}" class="food-image">
+    {% else %}
+        <img src="{% static 'images/no-food.png' %}" class="food-image">
+    {% endif %}
 {% endif %}
+
 
 
 
